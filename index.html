@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="title">"Eight Queens" Problem using Genetic Algorithm</div>
+        <div class="population">
+            <div class="individual">
+                <input class="gene" type="text" value="2">
+                <input class="gene" type="text" value="4">
+                <input class="gene" type="text" value="7">
+                <input class="gene" type="text" value="4">
+                <input class="gene" type="text" value="8">
+                <input class="gene" type="text" value="5">
+                <input class="gene" type="text" value="5">
+                <input class="gene" type="text" value="2">
+                <span class="fitness"></span>
+            </div>
+            <div class="individual">
+                <input class="gene" type="text" value="3">
+                <input class="gene" type="text" value="2">
+                <input class="gene" type="text" value="7">
+                <input class="gene" type="text" value="5">
+                <input class="gene" type="text" value="2">
+                <input class="gene" type="text" value="4">
+                <input class="gene" type="text" value="1">
+                <input class="gene" type="text" value="1">
+                <span class="fitness"></span>
+            </div>
+            <div class="individual">
+                <input class="gene" type="text" value="2">
+                <input class="gene" type="text" value="4">
+                <input class="gene" type="text" value="4">
+                <input class="gene" type="text" value="1">
+                <input class="gene" type="text" value="5">
+                <input class="gene" type="text" value="1">
+                <input class="gene" type="text" value="2">
+                <input class="gene" type="text" value="4">
+                <span class="fitness"></span>
+            </div>
+            <div class="individual">
+                <input class="gene" type="text" value="3">
+                <input class="gene" type="text" value="2">
+                <input class="gene" type="text" value="5">
+                <input class="gene" type="text" value="4">
+                <input class="gene" type="text" value="3">
+                <input class="gene" type="text" value="2">
+                <input class="gene" type="text" value="1">
+                <input class="gene" type="text" value="3">
+                <span class="fitness"></span>
+            </div>
+            <div>
+                <span>Population</span>
+                <span class="fitnessTitle">Fitness function</span>
+            </div>
+        </div>
+        <div class="populationAfterFitness">
+            <div class="individual">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+            </div>
+            <div class="individual">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+            </div>
+            <div class="individual">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+            </div>
+            <div class="individual">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+            </div>
+            <span class="crossOverIcon">
+                <span>}</span>
+                <span>{</span>
+            </span>
+            <span class="crossOverIcon">
+                <span>}</span>
+                <span>{</span>
+            </span>
+            <div>Selection</div>
+        </div>
+        <div class="populationAfterCrossOver">
+            <div class="individual">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+            </div>
+            <div class="individual">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+            </div>
+            <div class="individual">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+            </div>
+            <div class="individual">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+            </div>
+            <div class="mutationIcon">
+                <i class="fa-solid fa-arrow-right"></i>
+                <i class="fa-solid fa-arrow-right"></i>
+                <i class="fa-solid fa-arrow-right"></i>
+                <i class="fa-solid fa-arrow-right"></i>
+            </div>
+            <div>Cross-Over</div>
+        </div>
+        <div class="populationAfterMutation">
+            <div class="individual">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+            </div>
+            <div class="individual">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+            </div>
+            <div class="individual">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+            </div>
+            <div class="individual">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+                <input class="gene" type="text" value="">
+            </div>
+            <div class="mutationTitle">Mutation</div>
+        </div>
+        <div class="nextBtn">NEXT</div>
+        <div class="chessboard">
+            <div class="chessboard__1">
+                <div>
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                </div>
+                <div>
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                </div>
+                <div>
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                </div>
+                <div>
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                </div>
+                <div>
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                </div>
+                <div>
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                </div>
+                <div>
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                </div>
+                <div>
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                </div>
+                <div class="fitnessCell">
+                    <span class="fitnessCell__number">1</span>
+                    <span>+</span>
+                    <span class="fitnessCell__number">2</span>
+                    <span>+</span>
+                    <span class="fitnessCell__number">3</span>
+                    <span>+</span>
+                    <span class="fitnessCell__number">4</span>
+                    <span>+</span>
+                    <span class="fitnessCell__number">5</span>
+                    <span>+</span>
+                    <span class="fitnessCell__number">6</span>
+                    <span>+</span>
+                    <span class="fitnessCell__number">7</span>
+                    <span>=</span>
+                    <span class="fitnessCell__number">7</span>
+                </div>
+            </div>
+            <div class="chessboard__2">
+                <div>
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                </div>
+                <div>
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                </div>
+                <div>
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                </div>
+                <div>
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                </div>
+                <div>
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                </div>
+                <div>
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                </div>
+                <div>
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                </div>
+                <div>
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                </div>
+                <div class="fitnessCell">
+                    <span class="fitnessCell__number"></span>
+                    <span>+</span>
+                    <span class="fitnessCell__number"></span>
+                    <span>+</span>
+                    <span class="fitnessCell__number"></span>
+                    <span>+</span>
+                    <span class="fitnessCell__number"></span>
+                    <span>+</span>
+                    <span class="fitnessCell__number"></span>
+                    <span>+</span>
+                    <span class="fitnessCell__number"></span>
+                    <span>+</span>
+                    <span class="fitnessCell__number"></span>
+                    <span>=</span>
+                    <span class="fitnessCell__number">7</span>
+                </div>
+            </div>
+            <div class="chessboard__3">
+                <div>
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                </div>
+                <div>
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                </div>
+                <div>
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                </div>
+                <div>
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                </div>
+                <div>
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                </div>
+                <div>
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                </div>
+                <div>
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                </div>
+                <div>
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                </div>
+                <div class="fitnessCell">
+                    <span class="fitnessCell__number"></span>
+                    <span>+</span>
+                    <span class="fitnessCell__number"></span>
+                    <span>+</span>
+                    <span class="fitnessCell__number"></span>
+                    <span>+</span>
+                    <span class="fitnessCell__number"></span>
+                    <span>+</span>
+                    <span class="fitnessCell__number"></span>
+                    <span>+</span>
+                    <span class="fitnessCell__number"></span>
+                    <span>+</span>
+                    <span class="fitnessCell__number"></span>
+                    <span>=</span>
+                    <span class="fitnessCell__number">7</span>
+                </div>
+            </div>
+            <div class="chessboard__4">
+                <div>
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                </div>
+                <div>
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                </div>
+                <div>
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                </div>
+                <div>
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                </div>
+                <div>
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                </div>
+                <div>
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                </div>
+                <div>
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                </div>
+                <div>
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                    <input type="text" class="move">
+                </div>
+                <div class="fitnessCell">
+                    <span class="fitnessCell__number"></span>
+                    <span>+</span>
+                    <span class="fitnessCell__number"></span>
+                    <span>+</span>
+                    <span class="fitnessCell__number"></span>
+                    <span>+</span>
+                    <span class="fitnessCell__number"></span>
+                    <span>+</span>
+                    <span class="fitnessCell__number"></span>
+                    <span>+</span>
+                    <span class="fitnessCell__number"></span>
+                    <span>+</span>
+                    <span class="fitnessCell__number"></span>
+                    <span>=</span>
+                    <span class="fitnessCell__number">7</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>

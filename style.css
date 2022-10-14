@@ -1,0 +1,231 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+.active {
+    background-color: #FF9494;
+}
+
+.container {
+    position: relative;
+}
+
+.title {
+    position: absolute;
+    top: 40px;
+    font-size: 28px;
+    left: 50px;
+}
+
+.population {
+    position: absolute;
+    top: 100px;
+    left: 50px;
+    text-align: center;
+}
+
+.population > div:last-child,
+.populationAfterFitness > div:last-child,
+.populationAfterCrossOver > div:last-child,
+.populationAfterMutation > div:last-child {
+    margin-top: 12px;
+    font-size: 20px;
+}
+
+.population > div:last-child > span:last-child {
+    position: absolute;
+    right: -46px;
+}
+
+.population .fitness,
+.population .fitnessTitle,
+.populationAfterFitness,
+.populationAfterFitness .crossOverIcon,
+.populationAfterCrossOver,
+.populationAfterCrossOver .mutationIcon,
+.populationAfterMutation {
+    opacity: 0;
+    transition: 1s;
+}
+
+.populationAfterFitness {
+    position: absolute;
+    top: 100px;
+    left: 440px;
+    user-select: none;
+    text-align: center;
+}
+
+.populationAfterCrossOver {
+    position: absolute;
+    top: 100px;
+    left: 800px;
+    text-align: center;
+}
+
+.populationAfterMutation {
+    position: absolute;
+    top: 100px;
+    left: 1160px;
+    text-align: center;
+}
+
+.individual {
+    margin-top: 4px;
+    margin-bottom: 4px;
+    transition: 1s;
+}
+
+.individual.disable input {
+    background-color: #2C3333;
+}
+
+input, .mutationTitle {
+    transition: 1s;
+}
+
+input.active {
+    background-color: #ccc;
+}
+
+.gene {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    margin-left: -4px;
+    outline: none;
+    font-size: 16px;
+    border: 1px solid #000;
+    border-left: none;
+    transition: 1s;
+}
+
+.gene:first-child {
+    margin-left: 0;
+    border-left: 1px solid #000;
+}
+
+.fitness {
+    padding: 8px;
+    background-color: #ccc;
+    border-radius: 50px;
+    margin-left: 4px;
+}
+
+.populationAfterFitness > span {
+    position: absolute;
+    left: 320px;
+    top: 16px;
+    display: flex;
+    font-size: 48px;
+    transition: 1s;
+}
+
+.populationAfterFitness > span:nth-last-child(2) {
+    top: 104px;
+}
+
+.populationAfterFitness > span > span:last-child {
+    margin-left: -8px;
+}
+
+.populationAfterCrossOver > div:nth-last-child(2) {
+    font-size: 20px;
+    transition: 1s;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 2px;
+    right: -30px;
+}
+
+.populationAfterCrossOver > div:nth-last-child(2) > i {
+    padding: 12px 0;
+}
+
+.nextBtn {
+    position: absolute;
+    top: 50px;
+    right: 200px;
+    font-weight: 600;
+    padding: 12px 24px;
+    background-color: #ccc;
+    user-select: none;
+    cursor: pointer;
+}
+
+.nextBtn:hover {
+    background-color: #eee;
+}
+
+.chessboard {
+    position: absolute;
+    top: 360px;
+    left: 100px;
+}
+
+.chessboard__2 {
+    position: absolute;
+    top: 0;
+    left: 380px;
+    width: calc(30px * 8);
+}
+
+.chessboard__3 {
+    position: absolute;
+    top: 0;
+    left: 740px;
+    width: calc(30px * 8);
+}
+
+.chessboard__4 {
+    position: absolute;
+    top: 0;
+    left: 1100px;
+    width: calc(30px * 8);
+}
+
+.chessboard__1 {
+    width: calc(30px * 8);
+}
+
+.move {
+    width: 30px;
+    height: 30px;
+    margin-left: -4px;
+    text-align: center;
+    font-size: 24px;
+    border: 1px solid #000;
+    border-left: none;
+    border-bottom: none;
+    outline: none;
+}
+
+.move:first-child {
+    border-left: 1px solid #000;
+}
+
+.chessboard__1 div:nth-last-child(2) .move,
+.chessboard__2 div:nth-last-child(2) .move,
+.chessboard__3 div:nth-last-child(2) .move,
+.chessboard__4 div:nth-last-child(2) .move {
+    border-bottom: 1px solid #000;
+}
+
+.fitnessCell {
+    position: absolute;
+    bottom: -32px;
+    left: -4px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+span {
+    transition: 1s;
+}
